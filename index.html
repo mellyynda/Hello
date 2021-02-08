@@ -10,10 +10,14 @@
 </head>
 <body>
     <section class="cover">
-        <h1><span>H</span><span>E</span><span></span><span>L</span><span>L</span><span>O</span><span>.</span></h1>
-        <form>
-            <label for="name"><h2>Please tell us what your first name is so we can greet you properly</h2></label>
-            <input type="text" name="name">
+        <div>
+            <span>click the title ▽</span>
+            <h1><span>H</span><span>E</span><span></span><span>L</span><span>L</span><span>O</span><span>.</span></h1>
+        </div>
+        <h2>Please tell us what your first name is so we can greet you properly</h2>
+        <form class="form__group field">
+            <input type="text" class="form__field" placeholder="Name" name="name" id='name' required />
+            <label for="name" class="form__label">Name</label>
             <input type="submit" value="Go">
         </form>
         <div></div>

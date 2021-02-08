@@ -1,5 +1,9 @@
 const form = document.querySelector('form');
 const messageWrapper = document.querySelector('form ~ div');
+const cover = document.querySelector('.cover');
+const title = document.querySelector('H1');
+const callToAct = document.querySelector('H2');
+const clickMe = document.querySelector('.cover div span');
 let quotes = [];
 
 let user = '';
@@ -18,6 +22,7 @@ form.addEventListener('submit', (event) => {
         localStorage.setItem('firstVisit', firstVisit);
         messageWrapper.innerHTML = setMessage('Nice to meet you', user);
         form.classList.add('hidden');
+        callToAct.classList.add('hidden');
     } else messageWrapper.innerHTML = `error please provide a name`;
 });
 
@@ -31,5 +36,15 @@ const checkUser = () => {
         console.log('visit is 1');
         form.classList.add('hidden');
         messageWrapper.innerHTML = setMessage( 'Welcome back', localStorage.getItem('user'));
+        animateTitle();
     }
 }
+
+
+
+const animateTitle = () => {    
+    title.classList.toggle('clicked');
+    clickMe.classList.add('hidden');
+}
+
+title.addEventListener('click', animateTitle);
